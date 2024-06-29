@@ -1,0 +1,37 @@
+<div>
+    <form (ngSubmit)="updateTodo()" #todoForm="ngForm">
+      <div class="flex flex-col gap-2">
+        <input
+        placeholder="Title" 
+        class="rounded-md shadow-md outline-none text-gray-800 px-2 py-1" 
+        type="text" 
+        id="title" 
+        [(ngModel)]="title" name="title" required>
+
+        <textarea 
+        class="resize-none h-28 rounded-md shadow-md outline-none text-gray-800 px-2 py-1" 
+        placeholder="Description"  
+        id="description" 
+        [(ngModel)]="description" 
+        name="description" required></textarea>
+
+        <div class="flex items-center gap-2">
+            <input 
+              type="checkbox" 
+              id="complete" 
+              [(ngModel)]="complete" 
+              name="complete" 
+              class="rounded border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+            >
+            <label for="complete">Finished</label>
+          </div>
+
+          <div class="flex flex-col gap-2 mt-6">
+            <button [disabled]="!todoForm.valid" type="submit" class="disabled:bg-blue-500/30 outline-blue-500  bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-400 shadow-md">Update</button>
+            <a routerLink="/home" class=" bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-400 flex justify-center">Back</a>
+          </div>
+        
+        </div>
+    </form>
+  </div>
+  
